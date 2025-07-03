@@ -1,0 +1,23 @@
+# Java
+/target
+*.class
+*.log
+*.jar
+*.war
+
+# Maven
+.mvn/
+.settings/
+.idea/
+*.iml
+
+# Node/npm
+node_modules/
+
+# OS/filesystem
+.DS_Store
+*.swp
+*.swo
+
+# Docker
+*.pid

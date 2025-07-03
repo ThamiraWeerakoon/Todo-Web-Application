@@ -1,0 +1,68 @@
+body {
+    font-family: sans-serif;
+    background: #f4f4f4;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.grid {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.left, .right {
+    flex: 1;
+}
+
+.divider {
+    width: 2px;
+    background: #ccc;
+    height: 100%;
+}
+
+.left form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.left input, .left textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.left button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.left button:hover {
+    background-color: #0056b3;
+}
+
+.task {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+

@@ -1,93 +1,100 @@
-# ToDo Web Application
+# 📝 Todo App — Full Stack (Java + MySQL + Docker)
 
-A simple full-stack to-do application built with:
-- ✅ **Java (Spring Boot)** for backend
-- ✅ **MySQL** as the database
-- ✅ **HTML/CSS/JS** for frontend
-- ✅ **Docker & Docker Compose** to manage services
+A simple, modern full-stack Todo Application built with:
+
+- 🔧 Java 17 & Spring Boot 3
+- 🛢 MySQL (Dockerized)
+- 🌐 HTML/CSS/JS (Vanilla)
+- 🐳 Docker & Docker Compose
+
+---
+
+## 🚀 Features
+
+- Add and manage tasks
+- Top 5 recent incomplete tasks listed
+- Mark tasks as done
+- REST API built with Spring Boot
+- MySQL-backed persistence layer
+- Fully containerized (backend + frontend + db)
 
 ---
 
 ## 📦 Project Structure
 
-```
+```bash
 todo-app/
-├── backend/       # Spring Boot REST API
-├── frontend/      # Static frontend UI
+├── backend/       # Spring Boot API
+├── frontend/      # HTML/CSS/JS UI
+├── db/            # SQL init (optional)
 ├── docker-compose.yml
 ├── README.md
+└── .gitignore
 ```
 
 ---
 
-## 🚀 How to Build & Run the Project
+## 🛠 Setup & Run
 
-### ✅ Prerequisites
-- [Docker](https://www.docker.com/products/docker-desktop) installed
-- [Docker Compose](https://docs.docker.com/compose/) installed
+### 🔁 Prerequisites
+- [Docker](https://docs.docker.com/get-docker/)
+- Optional: [Java 17](https://adoptium.net/) and [Maven](https://maven.apache.org/) (for local dev)
 
-### 🧭 Steps
-
-1. **Clone or download this project**
-
-2. **Open terminal inside the project root folder**
-
-3. **Run the following command:**
+### ▶️ Run with Docker Compose
 
 ```bash
 docker-compose up --build
 ```
 
-This will:
-- Build and run the Spring Boot backend
-- Set up a MySQL database
-- Serve the frontend via Nginx
+Then access:
+- Frontend: [http://localhost:3000](http://localhost:3000)
+- API: [http://localhost:8080/api/tasks](http://localhost:8080/api/tasks)
 
 ---
 
-## 🌐 Access the App
+## ✅ API Endpoints
 
-| Component  | URL                          | Description           |
-|------------|------------------------------|-----------------------|
-| Frontend   | http://localhost:3000        | User Interface        |
-| Backend API| http://localhost:8080/api    | REST endpoints        |
-| MySQL DB   | localhost:3306               | MySQL container       |
+| Method | Endpoint                 | Description              |
+|--------|--------------------------|--------------------------|
+| GET    | `/api/tasks`             | Get top 5 recent tasks   |
+| POST   | `/api/tasks`             | Create a new task        |
+| PUT    | `/api/tasks/{id}/complete` | Mark task as completed |
 
 ---
 
-## 🧪 Testing (optional)
-If you add JUnit or integration tests to the backend, you can run them inside the `backend` folder like this:
+## 🧪 Testing
+
+### Run Unit & Integration Tests
+
+If Maven is installed:
 ```bash
 cd backend
 mvn test
 ```
 
----
-
-## 🛑 Stop the Application
-To stop all running containers:
+Or run tests via Docker:
 ```bash
-docker-compose down
+docker run --rm -v "$PWD/backend":/app -w /app maven:3.9.6-eclipse-temurin-17 mvn test
 ```
 
 ---
 
-## 🧹 Clean up Docker Images (Optional)
-```bash
-docker system prune -a
-```
+## 📚 Tech Stack
+
+- Java 17, Spring Boot
+- MySQL 8
+- HTML/CSS/JS
+- Docker + Docker Compose
+- JUnit 5, Mockito
 
 ---
 
-## 📌 Notes
-- First time startup may take a few seconds while MySQL initializes.
-- The application is designed to automatically create tables in the database.
-- Make sure no other app uses ports `3000`, `8080`, or `3306`.
+## 🤝 Contributing
+
+Pull requests welcome. For major changes, please open an issue first.
 
 ---
 
-## ✨ Features
-- Add new tasks
-- View only top 5 recent incomplete tasks
-- Mark tasks as completed
-- Responsive and simple UI
+## 🙋‍♂️ Author
+
+Developed by [Thamira Weerakoon] — [LinkedIn](https://www.linkedin.com/in/thamira-weerakoon-bb43522a4/) | [GitHub](https://github.com/ThamiraWeerakoon)
